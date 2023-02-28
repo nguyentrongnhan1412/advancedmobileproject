@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lettutor/constants/routes.dart';
 import 'package:lettutor/views/authentication/login_view.dart';
 import 'package:lettutor/views/authentication/register_view.dart';
+import 'package:lettutor/views/authentication/forgot_password_view.dart';
 
 void main() {
   runApp(const Lettutor());
@@ -50,6 +51,7 @@ class Lettutor extends StatelessWidget {
       routes: {
         Routes.login: (context) => const LoginView(),
         Routes.register: (context) => const RegisterView(),
+        Routes.forgotPassword: (context) => const ForgotPasswordView(),
       }
     );
   }
