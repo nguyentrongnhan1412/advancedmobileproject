@@ -76,8 +76,14 @@ class _LoginViewState extends State<LoginView> {
                   prefixIcon: const Icon(Icons.mail, size: 26),
                   border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  // focusedBorder: const OutlineInputBorder(
+                  //     borderSide: BorderSide(color: Colors.blue, width: 2),
+                  //     borderRadius: BorderRadius.all(Radius.circular(10))
+                  // ),
                 ),
+
               ),
             ),
 
@@ -97,7 +103,12 @@ class _LoginViewState extends State<LoginView> {
                   prefixIcon: const Icon(Icons.lock, size: 26),
                   border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 2),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                      borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  // focusedBorder: const OutlineInputBorder(
+                  //     borderSide: BorderSide(color: Colors.blue, width: 2),
+                  //     borderRadius: BorderRadius.all(Radius.circular(10))
+                  // ),
                 ),
               ),
             ),

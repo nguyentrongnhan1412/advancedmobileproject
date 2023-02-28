@@ -93,3 +93,17 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_native_splash:
+  color: "#F3F7FF"
+  background_image: assets/logo/lettutor.png
+  android_12:
+    color: "#F3F7FF"
+    background_image: assets/logo/lettutor.png
+  android: true
+  ios: true
+  web: false
+#
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo/lettutor.png"

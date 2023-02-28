@@ -16,7 +16,8 @@ class Lettutor extends StatelessWidget {
       title: 'Lettutor',
       theme: ThemeData(
         useMaterial3: true,
-        primaryColor: Colors.blue,
+        colorScheme: ColorScheme.light().copyWith(primary: Colors.blue),
+        // primaryColor: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
           displayLarge: TextStyle(
