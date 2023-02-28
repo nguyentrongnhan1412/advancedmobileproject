@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lettutor/constants/routes.dart';
 import 'package:lettutor/views/authentication/login_view.dart';
+import 'package:lettutor/views/authentication/register_view.dart';
 
 void main() {
   runApp(const Lettutor());
@@ -16,7 +17,7 @@ class Lettutor extends StatelessWidget {
       title: 'Lettutor',
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: ColorScheme.light().copyWith(primary: Colors.blue),
+        colorScheme: const ColorScheme.light().copyWith(primary: Colors.blue),
         // primaryColor: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
@@ -48,6 +49,7 @@ class Lettutor extends StatelessWidget {
       home: const LoginView(),
       routes: {
         Routes.login: (context) => const LoginView(),
+        Routes.register: (context) => const RegisterView(),
       }
     );
   }
