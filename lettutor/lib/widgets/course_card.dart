@@ -19,47 +19,56 @@ class CourseCard extends StatelessWidget {
       },
 
       child: Card(
+        margin: const EdgeInsets.symmetric(vertical: 8),
         clipBehavior: Clip.hardEdge,
         elevation: 2,
         surfaceTintColor: Colors.white,
         child: Column(
           children: [
-            Text(
-              course.name,
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
+            Image.asset(course.imageUrl),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    course.name,
+                    style: Theme.of(context).textTheme.displaySmall,
+                  ),
 
-            const SizedBox(
-              height: 8,
-            ),
+                  const SizedBox(
+                    height: 8,
+                  ),
 
-            Text(
-              course.description,
-              style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.grey),
-            ),
+                  Text(
+                    course.description,
+                    style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.grey),
+                  ),
 
-            const SizedBox(
-              height: 16,
-            ),
+                  const SizedBox(
+                    height: 16,
+                  ),
 
-            Row(
-              children: [
-                Expanded(
-                    child: Text(
-                      course.level,
-                      style: const TextStyle(fontSize: 18),
-                    )),
+                  Row(
+                    children: [
+                      Expanded(
+                          child: Text(
+                            course.level,
+                            style: const TextStyle(fontSize: 18),
+                          )),
 
-                Text(
-                  '${course.numberOfLessons} lessons',
-                  style: const TextStyle(fontSize: 18),
-                )
-              ],
+                      Text(
+                        '${course.numberOfLessons} lessons',
+                        style: const TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
       ),
     );
   }
-  
 }
