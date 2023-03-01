@@ -67,7 +67,7 @@ class _CoursesPageState extends State<CoursesPage>{
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(right: 24),
                               hintStyle: TextStyle(color: Colors.grey[400]),
-                              hintText: 'search courses',
+                              hintText: 'Search courses',
                               prefixIcon: const Icon(Icons.search),
                               border: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -102,7 +102,7 @@ class _CoursesPageState extends State<CoursesPage>{
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(right: 24),
                               hintStyle: TextStyle(color: Colors.grey[400]),
-                              hintText: 'search e-books',
+                              hintText: 'Search books',
                               prefixIcon: const Icon(Icons.search),
                               border: const OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.grey, width: 2),

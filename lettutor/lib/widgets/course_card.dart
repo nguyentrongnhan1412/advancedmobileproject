@@ -26,7 +26,7 @@ class CourseCard extends StatelessWidget {
           children: [
             Text(
               course.name,
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
 
             const SizedBox(

@@ -3,6 +3,7 @@ import 'package:lettutor/constants/routes.dart';
 import 'package:lettutor/views/authentication/login_view.dart';
 import 'package:lettutor/views/authentication/register_view.dart';
 import 'package:lettutor/views/authentication/forgot_password_view.dart';
+import 'package:lettutor/pages/navigation_page.dart';
 
 void main() {
   runApp(const Lettutor());
@@ -52,6 +53,7 @@ class Lettutor extends StatelessWidget {
         Routes.login: (context) => const LoginView(),
         Routes.register: (context) => const RegisterView(),
         Routes.forgotPassword: (context) => const ForgotPasswordView(),
+        Routes.main: (context) => const NavigationPage(),
       }
     );
   }
