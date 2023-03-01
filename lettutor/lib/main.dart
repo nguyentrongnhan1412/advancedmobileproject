@@ -7,6 +7,11 @@ import 'package:lettutor/pages/navigation_page.dart';
 import 'package:lettutor/views/course_detail_view.dart';
 import 'package:lettutor/views/become_tutor_view.dart';
 import 'package:lettutor/views/booking_detail_view.dart';
+import 'package:lettutor/views/teacher_detail_view.dart';
+import 'package:lettutor/views/tutor_review_view.dart';
+import 'package:lettutor/views/user_profile_view.dart';
+import 'package:lettutor/views/video_call_view.dart';
+import 'package:lettutor/views/write_review_view.dart';
 
 void main() {
   runApp(const Lettutor());
@@ -60,6 +65,12 @@ class Lettutor extends StatelessWidget {
         Routes.courseDetail: (context) => const CourseDetailView(),
         Routes.becomeTutor: (context) => const BecomeTutorView(),
         Routes.bookingDetail: (context) => const BookingDetailView(),
+        Routes.bookingDetail: (context) => const BookingDetailView(),
+        Routes.review: (context) => const TutorReviewView(),
+        Routes.writeReview: (context) => const WriteReviewView(),
+        Routes.videoCall: (context) => const VideoCallView(),
+        //teacher detail view
+        //user profile view
       }
     );
   }
