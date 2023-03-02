@@ -65,12 +65,11 @@ class Lettutor extends StatelessWidget {
         Routes.courseDetail: (context) => const CourseDetailView(),
         Routes.becomeTutor: (context) => const BecomeTutorView(),
         Routes.bookingDetail: (context) => const BookingDetailView(),
-        Routes.bookingDetail: (context) => const BookingDetailView(),
         Routes.review: (context) => const TutorReviewView(),
         Routes.writeReview: (context) => const WriteReviewView(),
         Routes.videoCall: (context) => const VideoCallView(),
-        //teacher detail view
-        //user profile view
+        Routes.teacherDetail: (context) => const TeacherDetailView(),
+        Routes.userProfile: (context) => const UserProfileView(),
       }
     );
   }
