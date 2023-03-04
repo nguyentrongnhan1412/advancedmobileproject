@@ -78,10 +78,6 @@ class _LoginViewState extends State<LoginView> {
                       borderSide: BorderSide(color: Colors.grey, width: 2),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
-                  // focusedBorder: const OutlineInputBorder(
-                  //     borderSide: BorderSide(color: Colors.blue, width: 2),
-                  //     borderRadius: BorderRadius.all(Radius.circular(10))
-                  // ),
                 ),
 
               ),
@@ -105,10 +101,6 @@ class _LoginViewState extends State<LoginView> {
                       borderSide: BorderSide(color: Colors.grey, width: 2),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                   ),
-                  // focusedBorder: const OutlineInputBorder(
-                  //     borderSide: BorderSide(color: Colors.blue, width: 2),
-                  //     borderRadius: BorderRadius.all(Radius.circular(10))
-                  // ),
                 ),
               ),
             ),
@@ -124,7 +116,7 @@ class _LoginViewState extends State<LoginView> {
                   );
                 },
                 style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue),
+                    backgroundColor: Colors.pink),
                 child: const Text(
                   'LOG IN',
                   style: TextStyle(fontSize: 18, color: Colors.white),

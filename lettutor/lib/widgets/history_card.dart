@@ -76,13 +76,13 @@ class _HistoryCardState extends State<HistoryCard> {
               children: [
                 Expanded(
                     child: TextButton(
-                      style: TextButton.styleFrom(foregroundColor: Colors.red),
+                      style: TextButton.styleFrom(foregroundColor: Colors.black),
                       onPressed: () async {
                         final dialogResult = await showReportDialog(context);
                       },
                       child: const Text(
                         'Report',
-                        style: TextStyle(fontSize: 16, color: Colors.red),
+                        style: TextStyle(fontSize: 16, color: Colors.black),
                       ),
                     ),
                 ),

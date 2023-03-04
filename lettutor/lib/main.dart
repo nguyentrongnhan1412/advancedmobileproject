@@ -27,20 +27,19 @@ class Lettutor extends StatelessWidget {
       title: 'Lettutor',
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: const ColorScheme.light().copyWith(primary: Colors.blue),
-        // primaryColor: Colors.blue,
+        colorScheme: const ColorScheme.light().copyWith(primary: Colors.pink),
+        // primaryColor: Colors.pink,
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
           displayLarge: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
-              color: Colors.blue[600],
+              color: Colors.pink[600],
               letterSpacing: 1.1),
           displayMedium: TextStyle(
             fontSize: 26,
             fontWeight: FontWeight.w700,
-            //letterSpacing: 1.0,
-            color: Colors.blue[600],
+            color: Colors.pink[600],
           ),
           displaySmall: const TextStyle(
             fontSize: 22,

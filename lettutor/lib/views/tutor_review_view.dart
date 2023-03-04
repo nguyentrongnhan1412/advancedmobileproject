@@ -18,7 +18,7 @@ class _TutorReviewViewState extends State<TutorReviewView>{
         elevation: 0,
         backgroundColor: Colors.white,
         leading: BackButton(
-          color: Colors.blue[600],
+          color: Colors.pink[600],
         ),
         title: Text(
           'Reviews',

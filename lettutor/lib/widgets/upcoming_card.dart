@@ -55,7 +55,7 @@ class UpcomingCard extends StatelessWidget{
                     icon: Icon(
                       Icons.edit_note_outlined,
                       size: 32,
-                      color: Colors.blue[700],
+                      color: Colors.pink[700],
                     ),
                 )
               ],
@@ -69,11 +69,11 @@ class UpcomingCard extends StatelessWidget{
               children: [
                 Expanded(
                   child: TextButton(
-                    style: TextButton.styleFrom(foregroundColor: Colors.red),
+                    style: TextButton.styleFrom(foregroundColor: Colors.black),
                     onPressed: () {},
                     child: const Text(
                       'Cancel',
-                      style: TextStyle(fontSize: 16, color: Colors.red),
+                      style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ),
                 ),

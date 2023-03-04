@@ -95,7 +95,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                 child: TextButton(
                   onPressed: () {},
                   style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                      backgroundColor: MaterialStatePropertyAll(Colors.pink)),
                   child: const Text(
                     'SEND RECOVERY EMAIL',
                     style: TextStyle(fontSize: 18, color: Colors.white),

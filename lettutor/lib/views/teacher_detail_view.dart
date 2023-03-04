@@ -20,7 +20,7 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: BackButton(
-          color: Colors.blue[600],
+          color: Colors.pink[600],
         ),
         title: Text(
           'Teacher Details',
@@ -83,13 +83,13 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                         children: [
                           Icon(
                             isFavorite ? Icons.favorite : Icons.favorite_border,
-                            color: isFavorite ? Colors.red : Colors.blue,
+                            color: isFavorite ? Colors.black : Colors.pink,
                           ),
 
                           Text(
                             'Favorite',
                             style: TextStyle(
-                              color: isFavorite ? Colors.red : Colors.blue,
+                              color: isFavorite ? Colors.black : Colors.pink,
                             ),
                           ),
 
@@ -105,9 +105,9 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                     },
                     child: Column(
                       children: const [
-                        Icon(Icons.reviews_outlined, color: Colors.blue),
+                        Icon(Icons.reviews_outlined, color: Colors.pink),
 
-                        Text('Review', style: TextStyle(color: Colors.blue))
+                        Text('Review', style: TextStyle(color: Colors.pink))
 
                       ],
                     ),
@@ -121,9 +121,9 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                     },
                     child: Column(
                       children: const [
-                        Icon(Icons.report_outlined, color: Colors.blue),
+                        Icon(Icons.report_outlined, color: Colors.pink),
 
-                        Text('Report', style: TextStyle(color: Colors.blue))
+                        Text('Report', style: TextStyle(color: Colors.pink))
                       ],
                     ),
                   ),
@@ -137,14 +137,14 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
               height: 200,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue, width: 2),
+                  border: Border.all(color: Colors.pink, width: 2),
                   borderRadius: const BorderRadius.all(Radius.circular(10))),
               child: Text(
                 'Introduction Video Goes Here',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w500,
-                  color: Colors.blue[700],
+                  color: Colors.pink[700],
                 ),
               ),
             ),
@@ -159,9 +159,9 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                 Chip(
                   label: const Text(
                     'English',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.pink),
                   ),
-                  backgroundColor: Colors.blue[50],
+                  backgroundColor: Colors.pink[50],
                 ),
               ]),
             ),
@@ -180,9 +180,9 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                       (index) => Chip(
                     label: Text(
                       teacher.specialties[index],
-                      style: const TextStyle(color: Colors.blue),
+                      style: const TextStyle(color: Colors.pink),
                     ),
-                    backgroundColor: Colors.blue[50],
+                    backgroundColor: Colors.pink[50],
                   ),
                 ),
               ),
@@ -236,7 +236,7 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                 style: TextButton.styleFrom(
                     minimumSize: const Size.fromHeight(0),
                     padding: const EdgeInsets.all(8),
-                    side: const BorderSide(color: Colors.blue, width: 1.5)),
+                    side: const BorderSide(color: Colors.pink, width: 1.5)),
                 onPressed: () async {
                   final selectedDate = await bookLearningDate(context);
                   if (mounted) {
@@ -245,7 +245,7 @@ class _TeacherDetailViewState extends State<TeacherDetailView> {
                 },
                 child: const Text(
                   'Book This Tutor',
-                  style: TextStyle(fontSize: 18, color: Colors.blue),
+                  style: TextStyle(fontSize: 18, color: Colors.pink),
                 ),
               ),
             ),
@@ -303,7 +303,7 @@ Future<void> bookLearningHour(BuildContext context, DateTime selectedDate) async
                     courseHours.length,
                         (index) => ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.pink,
                       ),
                       onPressed: () async {
                         final dialogResult = await showBookingConfirmDialog(context);

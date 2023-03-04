@@ -131,7 +131,7 @@ class _RegisterViewState extends State<RegisterView> {
               child: TextButton(
                 onPressed: () {},
                 style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                    backgroundColor: MaterialStatePropertyAll(Colors.pink)),
                 child: const Text(
                   'REGISTER',
                   style: TextStyle(fontSize: 18, color: Colors.white),

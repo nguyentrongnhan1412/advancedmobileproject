@@ -17,7 +17,7 @@ class _CourseDetailState extends State<CourseDetailView>{
        elevation: 0,
        backgroundColor: Colors.white,
        leading: BackButton(
-         color: Colors.blue[600],
+         color: Colors.pink[600],
        ),
        title: Text(
          'Course Details',
@@ -57,7 +57,7 @@ class _CourseDetailState extends State<CourseDetailView>{
                onPressed: () {},
                style: TextButton.styleFrom(
                  minimumSize: const Size.fromHeight(44),
-                 backgroundColor: Colors.blue,
+                 backgroundColor: Colors.pink,
                ),
                child: const Text(
                  'Discover',
@@ -78,7 +78,7 @@ class _CourseDetailState extends State<CourseDetailView>{
              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
              child: Row(
                children: [
-                 const Icon(Icons.help_outline, color: Colors.blue),
+                 const Icon(Icons.help_outline, color: Colors.pink),
                  const SizedBox(width: 8),
                  Text(
                    'Why Should I Take This Course?',
@@ -101,7 +101,7 @@ class _CourseDetailState extends State<CourseDetailView>{
              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
              child: Row(
                children: [
-                 const Icon(Icons.help_outline, color: Colors.blue),
+                 const Icon(Icons.help_outline, color: Colors.pink),
                  const SizedBox(width: 8),
                  Text(
                    'What will you be able to do?',
@@ -132,7 +132,7 @@ class _CourseDetailState extends State<CourseDetailView>{
              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
              child: Row(
                children: [
-                 const Icon(Icons.group_add_outlined, color: Colors.blue),
+                 const Icon(Icons.group_add_outlined, color: Colors.pink),
                  const SizedBox(width: 8),
                  Text(
                    'Intermediate',
@@ -154,7 +154,7 @@ class _CourseDetailState extends State<CourseDetailView>{
              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
              child: Row(
                children: [
-                 const Icon(Icons.book_outlined, color: Colors.blue),
+                 const Icon(Icons.book_outlined, color: Colors.pink),
                  const SizedBox(width: 8),
                  Text(
                    '9 Topics',

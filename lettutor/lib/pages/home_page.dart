@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage>{
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            color: Colors.blue[700],
+            color: Colors.pink[700],
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

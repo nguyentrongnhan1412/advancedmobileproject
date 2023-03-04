@@ -16,7 +16,7 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: BackButton(
-          color: Colors.blue[600],
+          color: Colors.pink[600],
         ),
         title: Text(
           'Become Tutor',
@@ -344,7 +344,7 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
               child: TextButton(
                 style: TextButton.styleFrom(
                     minimumSize: const Size.fromHeight(48),
-                    backgroundColor: Colors.blue),
+                    backgroundColor: Colors.pink),
                 onPressed: () {},
                 child: const Text(
                   'Done',

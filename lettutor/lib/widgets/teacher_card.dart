@@ -62,7 +62,7 @@ class TeacherCard extends StatelessWidget {
                         onPressed: onFavoriteClicked,
                         icon: Icon(
                           isFavorite ? Icons.favorite : Icons.favorite_border,
-                          color: isFavorite ? Colors.red : Colors.blue,
+                          color: isFavorite ? Colors.black : Colors.pink,
                         ),
                       )
                     ],
@@ -74,10 +74,10 @@ class TeacherCard extends StatelessWidget {
                     children: List<Widget>.generate(
                       teacher.specialties.length,
                           (index) => Chip(
-                        backgroundColor: Colors.lightBlue[50],
+                        backgroundColor: Colors.pink[50],
                         label: Text(
                           teacher.specialties[index],
-                          style: const TextStyle(fontSize: 14, color: Colors.blue),
+                          style: const TextStyle(fontSize: 14, color: Colors.pink),
                         ),
                       ),
                     ),

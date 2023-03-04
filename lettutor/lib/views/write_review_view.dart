@@ -17,7 +17,7 @@ class _WriteReviewViewState extends State<WriteReviewView> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: BackButton(
-          color: Colors.blue[600],
+          color: Colors.pink[600],
         ),
         title: Text(
           'Review',
@@ -86,7 +86,7 @@ class _WriteReviewViewState extends State<WriteReviewView> {
               child: TextButton(
                 style: TextButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-                    backgroundColor: Colors.blue),
+                    backgroundColor: Colors.pink),
                 onPressed: () async {
                   final dialogResult = await showDialog<bool>(
                     context: context,

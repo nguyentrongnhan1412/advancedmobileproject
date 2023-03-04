@@ -42,7 +42,7 @@ class BookingDetailView extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: BackButton(
-          color: Colors.blue[600],
+          color: Colors.pink[600],
         ),
         title: Text(
           'Booking Details',
@@ -63,7 +63,7 @@ class BookingDetailView extends StatelessWidget {
               child: Text(
                 '$time\n$weekday $date',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 22, color: Colors.blue[800]),
+                style: TextStyle(fontSize: 22, color: Colors.pink[800]),
               ),
             ),
 
@@ -80,7 +80,7 @@ class BookingDetailView extends StatelessWidget {
 
                 const Text(
                   'You have 1 lesson left',
-                  style: TextStyle(fontSize: 17, color: Colors.blue),
+                  style: TextStyle(fontSize: 17, color: Colors.pink),
                 ),
 
               ],
@@ -99,7 +99,7 @@ class BookingDetailView extends StatelessWidget {
 
                 const Text(
                   '1 lesson',
-                  style: TextStyle(fontSize: 17, color: Colors.blue),
+                  style: TextStyle(fontSize: 17, color: Colors.pink),
                 ),
 
               ],
@@ -126,7 +126,7 @@ class BookingDetailView extends StatelessWidget {
               child: TextButton(
                 style: TextButton.styleFrom(
                   minimumSize: const Size.fromHeight(40),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.pink,
                 ),
                 onPressed: () async {
                   final dialogResult = await showBookingResultDialog(context);

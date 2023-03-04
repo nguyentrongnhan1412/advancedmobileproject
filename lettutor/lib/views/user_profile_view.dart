@@ -17,7 +17,7 @@ class _UserProfileViewState extends State<UserProfileView> {
        elevation: 0,
        backgroundColor: Colors.white,
        leading: BackButton(
-         color: Colors.blue[600],
+         color: Colors.pink[600],
        ),
        title: Text(
          'Profile',
@@ -281,7 +281,7 @@ class _UserProfileViewState extends State<UserProfileView> {
            TextButton(
              onPressed: () {},
              style: TextButton.styleFrom(
-               backgroundColor: Colors.blue,
+               backgroundColor: Colors.pink,
              ),
              child: const Text(
                'SAVE',

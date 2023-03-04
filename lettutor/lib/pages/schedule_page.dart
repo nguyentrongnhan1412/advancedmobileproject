@@ -27,12 +27,12 @@ class _SchedulePageState extends State<SchedulePage> {
                       children: const [
                         Icon(
                           Icons.timer_outlined,
-                          color: Colors.blue,
+                          color: Colors.pink,
                         ),
                         SizedBox(width: 8),
                         Text(
                           'Upcoming',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Colors.pink),
                         )
                       ],
                     ),
@@ -44,12 +44,12 @@ class _SchedulePageState extends State<SchedulePage> {
                       children: const [
                         Icon(
                           Icons.history_outlined,
-                          color: Colors.blue,
+                          color: Colors.pink,
                         ),
                         SizedBox(width: 8),
                         Text(
                           'History',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Colors.pink),
                         )
                       ],
                     ),

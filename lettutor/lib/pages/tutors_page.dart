@@ -87,11 +87,11 @@ class _TutorsPageState extends State<TutorsPage>{
                   filters[index],
                   style: TextStyle(
                     fontSize: 14,
-                    color: chosenFilter == index ? Colors.blue[700] : Colors.black54,
+                    color: chosenFilter == index ? Colors.pink[700] : Colors.black54,
                   ),
                 ),
                 backgroundColor: Colors.grey[100],
-                selectedColor: Colors.lightBlue[100],
+                selectedColor: Colors.pinkAccent[100],
                 selected: chosenFilter == index,
                 onSelected: (bool selected) {
                   setState(() {
@@ -125,7 +125,7 @@ class _TutorsPageState extends State<TutorsPage>{
               TextButton(
                 onPressed: () {},
                 style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                    backgroundColor: MaterialStatePropertyAll(Colors.pink)),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
                   child: Text(

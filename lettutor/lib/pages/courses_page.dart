@@ -26,12 +26,12 @@ class _CoursesPageState extends State<CoursesPage>{
                       children: const [
                         Icon(
                           Icons.school_outlined,
-                          color: Colors.blue,
+                          color: Colors.pink,
                         ),
                         SizedBox(width: 8),
                         Text(
                           'All Courses',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Colors.pink),
                         )
                       ],
                     )
@@ -43,12 +43,12 @@ class _CoursesPageState extends State<CoursesPage>{
                       children: const [
                         Icon(
                           Icons.book_online_outlined,
-                          color: Colors.blue,
+                          color: Colors.pink,
                         ),
                         SizedBox(width: 8),
                         Text(
                           'Books',
-                          style: TextStyle(color: Colors.blue),
+                          style: TextStyle(color: Colors.pink),
                         )
                       ],
                     ),

@@ -15,7 +15,7 @@ class _ProfileCardState extends State<ProfileCard>{
       child: ListView(
         children: [
           ListTile(
-            leading: const Icon(Icons.person, color: Colors.blue),
+            leading: const Icon(Icons.person, color: Colors.pink),
             title: const Text('ntnhan7491'),
             onTap: () {
               Navigator.pop(context);
@@ -23,55 +23,55 @@ class _ProfileCardState extends State<ProfileCard>{
           ),
 
           ListTile(
-            leading: const Icon(Icons.add_card, color: Colors.blue),
+            leading: const Icon(Icons.add_card, color: Colors.pink),
             title: const Text('Buy Lessons'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.key, color: Colors.blue),
+            leading: const Icon(Icons.key, color: Colors.pink),
             title: const Text('Change Password'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.personal_video, color: Colors.blue),
+            leading: const Icon(Icons.personal_video, color: Colors.pink),
             title: const Text('Tutor'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.calendar_today, color: Colors.blue),
+            leading: const Icon(Icons.calendar_today, color: Colors.pink),
             title: const Text('Schedule'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.book, color: Colors.blue),
+            leading: const Icon(Icons.book, color: Colors.pink),
             title: const Text('Courses'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.menu_book, color: Colors.blue),
+            leading: const Icon(Icons.menu_book, color: Colors.pink),
             title: const Text('My Course'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.history, color: Colors.blue),
+            leading: const Icon(Icons.history, color: Colors.pink),
             title: const Text('History'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.laptop, color: Colors.blue),
+            leading: const Icon(Icons.laptop, color: Colors.pink),
             title: const Text('Become A Tutor'),
             onTap: () {},
           ),
 
           ListTile(
-            leading: const Icon(Icons.logout, color: Colors.blue),
+            leading: const Icon(Icons.logout, color: Colors.pink),
             title: const Text('Log Out'),
             onTap: () {},
           ),
