@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/routes.dart';
+import 'package:lettutor/src/constants/routes.dart';
 
 class UpcomingCard extends StatelessWidget{
   const UpcomingCard({Key? key}) : super(key: key);

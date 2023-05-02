@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/dummy.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/widgets/review_card.dart';
+import 'package:lettutor/src/constants/dummy.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/widgets/review_card.dart';
 
 class TutorReviewView extends StatefulWidget {
   const TutorReviewView({Key? key}) : super(key: key);

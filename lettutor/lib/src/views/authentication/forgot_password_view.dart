@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/datatype.dart';
+import 'package:lettutor/src/constants/datatype.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);

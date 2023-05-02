@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/entities/review.dart';
+import 'package:lettutor/src/entities/review.dart';
 
 class ReviewCard extends StatelessWidget{
   final Review review;

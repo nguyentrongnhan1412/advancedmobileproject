@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/views/authentication/login_view.dart';
-import 'package:lettutor/views/authentication/register_view.dart';
-import 'package:lettutor/views/authentication/forgot_password_view.dart';
-import 'package:lettutor/pages/navigation_page.dart';
-import 'package:lettutor/views/course_detail_view.dart';
-import 'package:lettutor/views/become_tutor_view.dart';
-import 'package:lettutor/views/booking_detail_view.dart';
-import 'package:lettutor/views/teacher_detail_view.dart';
-import 'package:lettutor/views/tutor_review_view.dart';
-import 'package:lettutor/views/user_profile_view.dart';
-import 'package:lettutor/views/video_call_view.dart';
-import 'package:lettutor/views/write_review_view.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/views/authentication/login_view.dart';
+import 'package:lettutor/src/views/authentication/register_view.dart';
+import 'package:lettutor/src/views/authentication/forgot_password_view.dart';
+import 'package:lettutor/src/pages/navigation_page.dart';
+import 'package:lettutor/src/views/course_detail_view.dart';
+import 'package:lettutor/src/views/become_tutor_view.dart';
+import 'package:lettutor/src/views/booking_detail_view.dart';
+import 'package:lettutor/src/views/teacher_detail_view.dart';
+import 'package:lettutor/src/views/tutor_review_view.dart';
+import 'package:lettutor/src/views/user_profile_view.dart';
+import 'package:lettutor/src/views/video_call_view.dart';
+import 'package:lettutor/src/views/write_review_view.dart';
 
 void main() {
   runApp(const Lettutor());

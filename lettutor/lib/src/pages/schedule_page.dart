@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/widgets/history_card.dart';
-import 'package:lettutor/widgets/upcoming_card.dart';
+import 'package:lettutor/src/widgets/history_card.dart';
+import 'package:lettutor/src/widgets/upcoming_card.dart';
 
 class SchedulePage extends StatefulWidget {
   const SchedulePage({Key? key}) : super(key: key);

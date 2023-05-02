@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/dummy.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/widgets/course_card.dart';
-import 'package:lettutor/widgets/book_card.dart';
+import 'package:lettutor/src/constants/dummy.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/widgets/course_card.dart';
+import 'package:lettutor/src/widgets/book_card.dart';
 
 class CoursesPage extends StatefulWidget {
   const CoursesPage({Key? key}) : super(key: key);

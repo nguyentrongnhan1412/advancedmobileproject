@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/entities/book.dart';
+import 'package:lettutor/src/entities/book.dart';
 
 class BookCard extends StatelessWidget {
 

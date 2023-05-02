@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/entities/teacher.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/entities/teacher.dart';
 
 class TeacherCard extends StatelessWidget {
   final Teacher teacher;

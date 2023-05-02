@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/widgets/select_date.dart';
+import 'package:lettutor/src/widgets/select_date.dart';
 
 class BecomeTutorView extends StatefulWidget {
   const BecomeTutorView({Key? key}) : super(key: key);

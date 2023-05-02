@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/routes.dart';
+import 'package:lettutor/src/constants/routes.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/datatype.dart';
-import 'package:lettutor/constants/routes.dart';
+import 'package:lettutor/src/constants/datatype.dart';
+import 'package:lettutor/src/constants/routes.dart';
 
 class LoginView extends StatefulWidget{
   const LoginView({Key? key}) : super(key: key);

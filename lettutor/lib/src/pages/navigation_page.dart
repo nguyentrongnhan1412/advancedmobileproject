@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/pages/courses_page.dart';
-import 'package:lettutor/pages/home_page.dart';
-import 'package:lettutor/pages/schedule_page.dart';
-import 'package:lettutor/pages/settings_page.dart';
-import 'package:lettutor/pages/tutors_page.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/pages/courses_page.dart';
+import 'package:lettutor/src/pages/home_page.dart';
+import 'package:lettutor/src/pages/schedule_page.dart';
+import 'package:lettutor/src/pages/settings_page.dart';
+import 'package:lettutor/src/pages/tutors_page.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);

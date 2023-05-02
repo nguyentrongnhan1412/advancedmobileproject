@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/dummy.dart';
-import 'package:lettutor/constants/routes.dart';
+import 'package:lettutor/src/constants/dummy.dart';
+import 'package:lettutor/src/constants/routes.dart';
 
 class TeacherDetailView extends StatefulWidget {
   const TeacherDetailView({Key? key}) : super(key: key);

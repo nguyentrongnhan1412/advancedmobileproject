@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/constants/dummy.dart';
-import 'package:lettutor/constants/routes.dart';
-import 'package:lettutor/widgets/teacher_card.dart';
+import 'package:lettutor/src/constants/dummy.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/widgets/teacher_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
