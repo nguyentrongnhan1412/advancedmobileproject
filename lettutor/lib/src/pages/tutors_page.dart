@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/src/constants/dummy.dart';
+import 'package:lettutor/src/dummy/dummy_data.dart';
 import 'package:lettutor/src/widgets/select_date.dart';
 import 'package:lettutor/src/widgets/select_time.dart';
 
