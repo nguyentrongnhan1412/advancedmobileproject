@@ -115,7 +115,7 @@ class _TutorCardState extends State<TutorCard> {
                             _handleTutorDetailView();
                           },
                           child: Text(widget.tutor.name ?? 'null name',
-                              style: Theme.of(context).textTheme.headline3),
+                              style: Theme.of(context).textTheme.displaySmall),
                         ),
                         Text(countryList[widget.tutor.country ?? 'null'] ?? 'unknown country',
                             style: const TextStyle(fontSize: 16)),
