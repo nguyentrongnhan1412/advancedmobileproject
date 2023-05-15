@@ -23,7 +23,7 @@ class BookCard extends StatelessWidget {
               children: [
                 Text(
                   book.name,
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
 
                 const SizedBox(

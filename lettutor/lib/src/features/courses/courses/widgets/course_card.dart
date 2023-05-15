@@ -1,23 +1,23 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:lettutor/src/dummy/course.dart';
+import 'package:lettutor/src/constants/course_levels.dart';
+import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/models/course/course.dart';
 
 class CourseCard extends StatelessWidget {
-
+  const CourseCard({Key? key, required this.course,}) : super(key: key);
   final Course course;
-  final Function(String value)? onTap;
-
-  const CourseCard({Key? key,
-    required this.course,
-    this.onTap,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        onTap!(course.name);
+        Navigator.pushNamed(
+          context,
+          Routes.courseDetail,
+          arguments: course.id ?? 'null courseId',
+        );
       },
-
       child: Card(
         margin: const EdgeInsets.symmetric(vertical: 8),
         clipBehavior: Clip.hardEdge,
@@ -25,14 +25,29 @@ class CourseCard extends StatelessWidget {
         surfaceTintColor: Colors.white,
         child: Column(
           children: [
-            Image.asset(course.imageUrl),
+            CachedNetworkImage(
+              imageUrl: course.imageUrl ?? '',
+              fit: BoxFit.cover,
+              placeholder: (context, url) => const Icon(
+                Icons.image_rounded,
+                size: 48,
+                color: Colors.grey,
+              ),
+              errorWidget: (context, url, error) => const Icon(
+                Icons.error_outline_rounded,
+                size: 32,
+                color: Colors.redAccent,
+              ),
+            ),
+
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   Text(
-                    course.name,
+                    course.name ?? 'null course name',
                     style: Theme.of(context).textTheme.displaySmall,
                   ),
 
@@ -41,7 +56,7 @@ class CourseCard extends StatelessWidget {
                   ),
 
                   Text(
-                    course.description,
+                    course.description ?? 'null course description',
                     style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.grey),
                   ),
 
@@ -51,21 +66,23 @@ class CourseCard extends StatelessWidget {
 
                   Row(
                     children: [
+
                       Expanded(
-                          child: Text(
-                            course.level,
-                            style: const TextStyle(fontSize: 18),
-                          )),
+                        child: Text(
+                          courseLevels[course.level!] ?? 'null course level',
+                          style: const TextStyle(fontSize: 18),
+                        ),
+                      ),
 
                       Text(
-                        '${course.numberOfLessons} lessons',
+                        '${course.topics!.length} lessons',
                         style: const TextStyle(fontSize: 18),
                       )
                     ],
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

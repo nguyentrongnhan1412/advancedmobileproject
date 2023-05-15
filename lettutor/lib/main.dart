@@ -15,9 +15,9 @@ import 'package:lettutor/src/views/course_detail_view.dart';
 import 'package:lettutor/src/views/become_tutor_view.dart';
 import 'package:lettutor/src/views/booking_detail_view.dart';
 import 'package:lettutor/src/views/teacher_detail_view.dart';
+import 'package:lettutor/src/views/video_call_view.dart';
 import 'package:lettutor/src/views/tutor_review_view.dart';
 import 'package:lettutor/src/views/user_profile_view.dart';
-import 'package:lettutor/src/views/video_call_view.dart';
 import 'package:lettutor/src/views/write_review_view.dart';
 
 class MyHttpOverrides extends HttpOverrides {
