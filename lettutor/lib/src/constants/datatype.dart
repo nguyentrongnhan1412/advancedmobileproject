@@ -1,0 +1,4 @@
+enum Nationality {
+  vietnamese,
+  foreign,
+}
