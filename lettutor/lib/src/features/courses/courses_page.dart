@@ -48,7 +48,7 @@ class _CoursesPageState extends State<CoursesPage> {
                     SizedBox(width: 8),
 
                     Text(
-                      'E-Books',
+                      'Books',
                       style: TextStyle(color: Colors.pink),
                     )
 

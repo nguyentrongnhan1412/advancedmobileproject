@@ -28,28 +28,35 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children:
+          [
+
             Text(
               'Basic Info',
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
 
             Row(
-              children: [
+              children:
+              [
+
                 Column(
-                  children: [
+                  children:
+                  [
+
                     Image.asset(
-                      'assets/user/user-avatar.jpg',
+                      'assets/user/user-avatar-01.png',
                       width: 100,
                       height: 100,
                     ),
+
                     TextButton(
                       onPressed: () {},
                       child: const Text('Upload'),
                     ),
                   ],
-                ),
 
+                ),
                 const SizedBox(width: 16),
 
                 Expanded(
@@ -104,14 +111,10 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
                         'Date of Birth',
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
-
                       const SizedBox(height: 2),
-
-                      const SelectDate(),
-
                     ],
                   ),
-                ),
+                )
               ],
             ),
 
@@ -343,8 +346,7 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
               padding: const EdgeInsets.only(top: 24, bottom: 12),
               child: TextButton(
                 style: TextButton.styleFrom(
-                    minimumSize: const Size.fromHeight(48),
-                    backgroundColor: Colors.pink),
+                    minimumSize: const Size.fromHeight(48), backgroundColor: Colors.pink),
                 onPressed: () {},
                 child: const Text(
                   'Done',
@@ -355,10 +357,9 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
                 ),
               ),
             ),
-
           ],
         ),
-      )
+      ),
     );
   }
 }

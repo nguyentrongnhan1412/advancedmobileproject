@@ -10,15 +10,20 @@ import 'package:lettutor/src/features/authentication/forgot_password_view.dart';
 import 'package:lettutor/src/features/authentication/login_view.dart';
 import 'package:lettutor/src/features/authentication/register_view.dart';
 
-import 'package:lettutor/src/pages/navigation_page.dart';
-import 'package:lettutor/src/views/course_detail_view.dart';
-import 'package:lettutor/src/views/become_tutor_view.dart';
-import 'package:lettutor/src/views/booking_detail_view.dart';
-import 'package:lettutor/src/views/teacher_detail_view.dart';
-import 'package:lettutor/src/views/video_call_view.dart';
-import 'package:lettutor/src/views/tutor_review_view.dart';
-import 'package:lettutor/src/views/user_profile_view.dart';
-import 'package:lettutor/src/views/write_review_view.dart';
+import 'package:lettutor/src/features/navigation/navigation_page.dart';
+import 'package:lettutor/src/features/tutor/search_tutor/views/tutor_search_result.dart';
+import 'package:lettutor/src/features/tutor/tutor_feedback/tutor_feedback_view.dart';
+import 'package:lettutor/src/features/tutor/tutor_feedback/write_review_view.dart';
+
+import 'package:lettutor/src/features/user_profile/become_tutor_view.dart';
+import 'package:lettutor/src/features/booking/views/booking_detail_view.dart';
+import 'package:lettutor/src/features/courses/courses/views/course_detail_view.dart';
+import 'package:lettutor/src/features/tutor/tutor_detail/tutor_detail_view.dart';
+import 'package:lettutor/src/features/user_profile/user_profile_view.dart';
+import 'package:lettutor/src/features/video_call/video_call_view.dart';
+import 'package:lettutor/src/providers/app_provider.dart';
+import 'package:lettutor/src/providers/auth_provider.dart';
+import 'package:provider/provider.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -30,11 +35,11 @@ class MyHttpOverrides extends HttpOverrides {
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
-  runApp(const LetTutor());
+  runApp(const Lettutor());
 }
 
-class LetTutor extends StatelessWidget {
-  const LetTutor({super.key});
+class Lettutor extends StatelessWidget {
+  const Lettutor({super.key});
 
   // This widget is the root of your application.
   @override

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class VideoCallView extends StatefulWidget {
   const VideoCallView({Key? key, required this.startTimestamp}) : super(key: key);
-
   final int startTimestamp;
 
   @override

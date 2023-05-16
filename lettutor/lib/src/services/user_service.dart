@@ -43,8 +43,6 @@ class UserService {
 
     final List<dynamic> data = jsonDecode['data'];
     List<BookingInfo> lessons = data.map((e) => BookingInfo.fromJson(e)).toList();
-
-    // Sort lessons by timestamp increasingly
     lessons.sort((a, b) {
       if (a.scheduleDetailInfo == null || b.scheduleDetailInfo == null) return 0;
       if (a.scheduleDetailInfo!.startPeriodTimestamp == null ||
