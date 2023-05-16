@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:lettutor/src/constants/routes.dart';
 
-class ProfileCard extends StatefulWidget {
-  const ProfileCard({Key? key}) : super(key: key);
-
+class AppEndDrawer extends StatefulWidget {
+  const AppEndDrawer({Key? key}) : super(key: key);
   @override
-  State<ProfileCard> createState() => _ProfileCardState();
+  State<AppEndDrawer> createState() => _AppEndDrawerState();
 }
 
-class _ProfileCardState extends State<ProfileCard>{
+class _AppEndDrawerState extends State<AppEndDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        children: [
+        children:
+        [
+
           ListTile(
             leading: const Icon(Icons.person, color: Colors.pink),
             title: const Text('ntnhan7491'),
@@ -47,6 +48,12 @@ class _ProfileCardState extends State<ProfileCard>{
           ),
 
           ListTile(
+            leading: const Icon(Icons.history, color: Colors.pink),
+            title: const Text('History'),
+            onTap: () {},
+          ),
+
+          ListTile(
             leading: const Icon(Icons.book, color: Colors.pink),
             title: const Text('Courses'),
             onTap: () {},
@@ -55,12 +62,6 @@ class _ProfileCardState extends State<ProfileCard>{
           ListTile(
             leading: const Icon(Icons.menu_book, color: Colors.pink),
             title: const Text('My Course'),
-            onTap: () {},
-          ),
-
-          ListTile(
-            leading: const Icon(Icons.history, color: Colors.pink),
-            title: const Text('History'),
             onTap: () {},
           ),
 
@@ -79,5 +80,4 @@ class _ProfileCardState extends State<ProfileCard>{
       ),
     );
   }
-  
 }

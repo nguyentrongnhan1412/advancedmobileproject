@@ -24,12 +24,13 @@ class _WriteReviewViewState extends State<WriteReviewView> {
           style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children:
+          [
+
             Text(
               'Rating',
               style: Theme.of(context).textTheme.displaySmall,
@@ -105,24 +106,25 @@ class _WriteReviewViewState extends State<WriteReviewView> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
+                  children: const
+                  [
                     Text(
                       'Send',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
+
                     SizedBox(width: 12),
-                    Icon(Icons.send, color: Colors.white, size: 24,
-                    ),
+
+                    Icon(Icons.send, color: Colors.white, size: 24,),
+
                   ],
                 ),
               ),
-            ),
-
+            )
           ],
         ),
       ),
     );
   }
-
 }

@@ -10,38 +10,6 @@ class SelectTime extends StatefulWidget {
 class _SelectTimeState extends State<SelectTime> {
   String time = 'hh:mm';
 
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-        onTap: () {
-          _selectTime(context);
-        },
-        child: Container(
-          width: 120,
-          height: 48,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: 2,
-              color: time == 'hh:mm' ? Colors.grey[400]! : Colors.black54,
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-          ),
-
-          child: Text(
-            time,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: time == 'hh:mm' ? FontWeight.normal : FontWeight.w500,
-              letterSpacing: 1.0,
-              color: time == 'hh:mm' ? Colors.grey[400] : Colors.black54,
-            ),
-          ),
-        )
-    );
-  }
-
   void _selectTime(BuildContext context) async {
     final dateTime = DateTime.now();
     final pickedTime = await showTimePicker(
@@ -58,5 +26,36 @@ class _SelectTimeState extends State<SelectTime> {
         time = '$hour:$minute';
       });
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        _selectTime(context);
+      },
+      child: Container(
+        width: 120,
+        height: 48,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 2,
+            color: time == 'hh:mm' ? Colors.grey[400]! : Colors.black54,
+          ),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Text(
+          time,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: time == 'hh:mm' ? FontWeight.normal : FontWeight.w500,
+            letterSpacing: 1.0,
+            color: time == 'hh:mm' ? Colors.grey[400] : Colors.black54,
+          ),
+        ),
+      ),
+    );
   }
 }

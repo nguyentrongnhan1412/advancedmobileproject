@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lettutor/src/constants/routes.dart';
+import 'package:lettutor/src/providers/auth_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -11,16 +14,29 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    final authProvider = context.watch<AuthProvider>();
+
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Align(
+        children:
+        [
+
+          Align(
             alignment: Alignment.center,
-            child: CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage('assets/user/user-avatar.jpg'),
+            child: Container(
+              width: 120,
+              height: 120,
+              clipBehavior: Clip.hardEdge,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: Image.network(
+                authProvider.currentUser.avatar ?? '',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => const Icon(Icons.person_rounded),
+              ),
             ),
           ),
 
@@ -29,7 +45,7 @@ class _SettingsPageState extends State<SettingsPage> {
           Align(
               alignment: Alignment.center,
               child: Text(
-                'Nguyễn Trọng Nhân',
+                authProvider.currentUser.name ?? 'null',
                 style: Theme.of(context).textTheme.displaySmall,
               )
           ),
@@ -50,10 +66,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.manage_accounts,
-                    size: 30,
-                  ),
+                  Icon(Icons.manage_accounts, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Account',
@@ -73,10 +86,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.language,
-                    size: 30,
-                  ),
+                  Icon(Icons.language, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Language',
@@ -98,10 +108,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: const EdgeInsets.all(12),
                 child: Row(
                   children: const [
-                    Icon(
-                      Icons.assignment,
-                      size: 30,
-                    ),
+                    Icon(Icons.assignment, size: 30),
                     SizedBox(width: 12),
                     Text(
                       'Become A Tutor',
@@ -122,10 +129,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.privacy_tip_outlined,
-                    size: 30,
-                  ),
+                  Icon(Icons.privacy_tip_outlined, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Privacy Policy',
@@ -145,10 +149,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.newspaper_outlined,
-                    size: 30,
-                  ),
+                  Icon(Icons.newspaper_outlined, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Terms & Conditions',
@@ -168,10 +169,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.contact_mail_outlined,
-                    size: 30,
-                  ),
+                  Icon(Icons.contact_mail_outlined, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Contact',
@@ -191,10 +189,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.all(12),
               child: Row(
                 children: const [
-                  Icon(
-                    Icons.contact_support_outlined,
-                    size: 30,
-                  ),
+                  Icon(Icons.contact_support_outlined, size: 30),
                   SizedBox(width: 12),
                   Text(
                     'Guide',
@@ -208,44 +203,64 @@ class _SettingsPageState extends State<SettingsPage> {
           const SizedBox(height: 48),
 
           TextButton(
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  Routes.login,
-                      (route) => false,
-                );
-              },
-
-              style: TextButton.styleFrom(
-                minimumSize: const Size.fromHeight(44),
-                backgroundColor: const Color.fromRGBO(255, 0, 0, 0.2),
-              ),
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(
-                    Icons.logout,
-                    color: Colors.red,
-                  ),
-
-                  SizedBox(width: 8),
-
-                  Text(
-                    'Log Out',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.red,
-                    ),
-                  ),
-                ],
-              ),
+            onPressed: () async {
+              final result = await _showLogOutConfirmDialog(context);
+              if (result) {
+                final prefs = await SharedPreferences.getInstance();
+                prefs.remove('refresh_token');
+                authProvider.token = null;
+                if (mounted) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    Routes.login,
+                        (route) => false,
+                  );
+                }
+              }
+            },
+            style: TextButton.styleFrom(
+              minimumSize: const Size.fromHeight(44),
+              backgroundColor: const Color.fromRGBO(255, 0, 0, 0.2),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.logout, color: Colors.red),
+                SizedBox(width: 8),
+                Text(
+                  'Log Out',
+                  style: TextStyle(fontSize: 18, color: Colors.red),
+                ),
+              ],
+            ),
           ),
-
           const SizedBox(height: 48),
-
         ],
       ),
     );
   }
+}
+
+Future<bool> _showLogOutConfirmDialog(BuildContext context) async {
+  return showDialog<bool>(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        title: const Text('Log Out'),
+        content: const Text('Are you sure you want to log out?'),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: const Text('NO')),
+          TextButton(
+              onPressed: () {
+                Navigator.pop(context, true);
+              },
+              child: const Text('YES')),
+        ],
+      );
+    },
+  ).then((value) => value ?? false);
 }
