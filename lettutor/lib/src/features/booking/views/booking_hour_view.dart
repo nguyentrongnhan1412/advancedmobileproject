@@ -59,7 +59,7 @@ class BookingHourView extends StatelessWidget {
 
                   return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[300],
+                      backgroundColor: Colors.pink[300],
                     ),
                     onPressed: validSchedules[index].isBooked as bool
                         ? null
