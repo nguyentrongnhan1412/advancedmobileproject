@@ -20,6 +20,7 @@ import 'package:lettutor/src/features/booking/views/booking_detail_view.dart';
 import 'package:lettutor/src/features/courses/courses/views/course_detail_view.dart';
 import 'package:lettutor/src/features/tutor/tutor_detail/tutor_detail_view.dart';
 import 'package:lettutor/src/features/user_profile/user_profile_view.dart';
+import 'package:lettutor/src/features/chatgpt/views/chat_view.dart';
 import 'package:lettutor/src/features/video_call/video_call_view.dart';
 import 'package:lettutor/src/providers/app_provider.dart';
 import 'package:lettutor/src/providers/auth_provider.dart';
@@ -98,6 +99,7 @@ class Lettutor extends StatelessWidget {
             Routes.review: (context) => const TutorFeedbackView(),
             Routes.writeReview: (context) => const WriteReviewView(),
             Routes.tutorSearchResult: (context) => const TutorSearchResult(),
+            Routes.chatGPT: (context) => const ChatView(),
           }
       )
     );

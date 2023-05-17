@@ -45,7 +45,7 @@ class _BecomeTutorViewState extends State<BecomeTutorView> {
                   [
 
                     Image.asset(
-                      'assets/user/user-avatar.png',
+                      'assets/user/user-avatar.jpg',
                       width: 100,
                       height: 100,
                     ),
