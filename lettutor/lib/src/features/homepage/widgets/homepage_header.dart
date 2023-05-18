@@ -108,9 +108,8 @@ class _HomepageHeaderState extends State<HomepageHeader> {
       width: double.maxFinite,
       height: 208,
       child: _isLoading ? Center(
-        child: _isError
-            ? const Text(
-          'Error: Cannot get upcoming class',
+        child: _isError ? const Text(
+          'Cannot get upcoming class',
           style: TextStyle(color: Colors.white),
         )
             : const CircularProgressIndicator(
