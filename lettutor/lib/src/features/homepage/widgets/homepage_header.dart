@@ -72,25 +72,6 @@ class _HomepageHeaderState extends State<HomepageHeader> {
     final String meetingToken = upcomingClass.studentMeetingLink?.split('token=')[1] ?? '';
     Map<String, dynamic> jwtDecoded = JwtDecoder.decode(meetingToken);
     final String room = jwtDecoded['room'];
-    // Map<FeatureFlagEnum, bool> featureFlags = {
-    //   FeatureFlagEnum.WELCOME_PAGE_ENABLED: false,
-    // };
-    // if (!kIsWeb) {
-    //   if (Platform.isAndroid) {
-    //     featureFlags[FeatureFlagEnum.CALL_INTEGRATION_ENABLED] = false;
-    //   } else if (Platform.isIOS) {
-    //     featureFlags[FeatureFlagEnum.PIP_ENABLED] = false;
-    //   }
-    // }
-    //
-    // final options = JitsiMeetingOptions(room: room)
-    //   ..serverURL = "https://meet.lettutor.com"
-    //   ..token = meetingToken
-    //   ..audioOnly = true
-    //   ..audioMuted = true
-    //   ..videoMuted = true
-    //   ..featureFlags.addAll(featureFlags);
-    // await JitsiMeet.joinMeeting(options);
     Map <FeatureFlag, bool> featureFlags = {FeatureFlag.isWelcomePageEnabled: false};
     if (!kIsWeb){
       if (Platform.isAndroid){

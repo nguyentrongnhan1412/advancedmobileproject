@@ -29,4 +29,37 @@ class Book {
     this.categories,
   });
 
+  Book.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    description = json['description'];
+    imageUrl = json['imageUrl'];
+    level = json['level'];
+    visible = json['visible'];
+    fileUrl = json['fileUrl'];
+    createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
+    isPrivate = json['isPrivate'];
+    createdBy = json['createdBy'];
+    categories = json['categories'] != null
+        ? (json['categories'] as List).map((e) => CourseCategory.fromJson(e)).toList()
+        : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = {};
+    data['id'] = id;
+    data['name'] = name;
+    data['description'] = description;
+    data['imageUrl'] = imageUrl;
+    data['level'] = level;
+    data['visible'] = visible;
+    data['fileUrl'] = fileUrl;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['isPrivate'] = isPrivate;
+    data['createdBy'] = createdBy;
+    return data;
+  }
+
 }

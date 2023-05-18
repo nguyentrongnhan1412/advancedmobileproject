@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class WriteReviewView extends StatefulWidget {
   const WriteReviewView({Key? key}) : super(key: key);
-
   @override
   State<WriteReviewView> createState() => _WriteReviewViewState();
 }
