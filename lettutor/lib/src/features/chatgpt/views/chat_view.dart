@@ -36,10 +36,13 @@ class _ChatViewState extends State<ChatView> {
       appBar: AppBar(
         centerTitle: true,
         toolbarHeight: 70,
+        leading: BackButton(
+          color: Colors.white,
+        ),
         title:
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: const Text("Chat With OpenAI"),
+          child: const Text("Chat With OpenAI", style: TextStyle(color: Colors.white)),
         ),
         backgroundColor: Colors.pink,
       ),
@@ -84,6 +87,7 @@ class _ChatViewState extends State<ChatView> {
   Widget _buildSubmit() {
     return Visibility(
       visible: !isLoading,
+
       child: IconButton(
         color: Colors.pink,
         icon: const Icon(Icons.send_rounded,),

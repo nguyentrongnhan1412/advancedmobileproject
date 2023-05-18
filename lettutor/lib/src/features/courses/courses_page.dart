@@ -28,7 +28,7 @@ class _CoursesPageState extends State<CoursesPage> {
                     SizedBox(width: 8),
 
                     Text(
-                      'All Courses',
+                      'Courses',
                       style: TextStyle(color: Colors.pink),
                     )
                   ],

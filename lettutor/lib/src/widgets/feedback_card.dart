@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lettutor/src/dummy/review.dart';
 import 'package:lettutor/src/models/tutor/tutor_feedback.dart';
 
 class FeedbackCard extends StatelessWidget {

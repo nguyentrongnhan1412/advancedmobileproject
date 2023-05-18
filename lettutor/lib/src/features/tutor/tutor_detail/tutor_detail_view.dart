@@ -3,7 +3,6 @@ import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:lettutor/src/constants/country_list.dart';
 import 'package:lettutor/src/constants/language_list.dart';
-import 'package:lettutor/src/dummy/dummy_data.dart';
 import 'package:lettutor/src/constants/routes.dart';
 import 'package:lettutor/src/features/booking/widgets/tutor_schedule.dart';
 import 'package:lettutor/src/features/tutor/tutor_detail/tutor_report_dialog.dart';
@@ -86,7 +85,7 @@ class _TutorDetailViewState extends State<TutorDetailView> {
           color: Colors.pink[600],
         ),
         title: Text(
-          'Teacher Details',
+          'Tutor Details',
           style: Theme.of(context).textTheme.displayMedium,
         ),
       ),
@@ -137,7 +136,7 @@ class _TutorDetailViewState extends State<TutorDetailView> {
                       ),
                       _tutorInfo.rating == null
                           ? const Text(
-                        'No reviews yet',
+                        'No review(s) yet',
                         style: TextStyle(
                           fontStyle: FontStyle.italic,
                           color: Colors.grey,

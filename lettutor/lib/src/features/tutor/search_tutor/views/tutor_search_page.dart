@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lettutor/src/constants/country_list.dart';
 import 'package:lettutor/src/constants/datatype.dart';
 import 'package:lettutor/src/constants/routes.dart';
-import 'package:lettutor/src/dummy/dummy_data.dart';
 import 'package:lettutor/src/models/tutor/tutor.dart';
 import 'package:lettutor/src/providers/auth_provider.dart';
 import 'package:lettutor/src/services/tutor_service.dart';
