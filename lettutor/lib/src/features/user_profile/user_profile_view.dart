@@ -7,6 +7,7 @@ import 'package:lettutor/src/models/user/user.dart';
 import 'package:lettutor/src/providers/auth_provider.dart';
 import 'package:lettutor/src/services/user_service.dart';
 import 'package:lettutor/src/widgets/select_date.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
 class UserProfileView extends StatefulWidget {
@@ -29,6 +30,7 @@ class _UserProfileViewState extends State<UserProfileView> {
   List<TestPreparation> chosenTestPreparations = [];
   bool _isInitiated = false;
   bool _isLoading = true;
+  final ImagePicker _picker = ImagePicker();
 
   void _initiateUserProfile(AuthProvider authProvider) async {
     final String token = authProvider.token?.access?.token as String;
@@ -84,6 +86,29 @@ class _UserProfileViewState extends State<UserProfileView> {
       _initiateUserProfile(authProvider);
     }
 
+    void _imgFromGallery() async {
+      var pickedFile = await _picker.pickImage(source: ImageSource.gallery, imageQuality: 50);
+
+      if (pickedFile != null) {
+        final bool res = await UserService.uploadAvatar(pickedFile.path, authProvider.token!.access?.token ?? "");
+        if (res) {
+          final newInfo = await UserService.getUserInfo(authProvider.token!.access?.token ?? "");
+
+          if (newInfo != null) {
+            authProvider.setUser(newInfo);
+          }
+          else {
+            print("Error Get New Profile");
+          }
+
+          print ("Upload New Avatar Successfully");
+        }
+        else {
+          print("Error Upload New Avatar");
+        }
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -132,7 +157,7 @@ class _UserProfileViewState extends State<UserProfileView> {
                     bottom: 0,
                     right: 0,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: _imgFromGallery,
                       child: CircleAvatar(
                         backgroundColor: Colors.grey[300],
                         radius: 18,
