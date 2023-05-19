@@ -120,6 +120,29 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
 
+          const SizedBox(height: 4),
+
+          InkWell(
+            onTap: () => Navigator.pushNamed(context, Routes.chatGPT),
+            child: Card(
+              surfaceTintColor: Colors.white,
+              elevation: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  children: const [
+                    Icon(Icons.message_rounded, size: 30),
+                    SizedBox(width: 12),
+                    Text(
+                      'Chat With OpenAI',
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+
           const SizedBox(height: 24),
 
           Card(

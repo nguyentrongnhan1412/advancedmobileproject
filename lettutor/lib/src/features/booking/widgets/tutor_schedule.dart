@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lettutor/src/constants/routes.dart';
 import 'package:lettutor/src/dummy/dummy_data.dart';
 import 'package:lettutor/src/features/booking/views/booking_hour_view.dart';
 import 'package:lettutor/src/models/schedule/schedule.dart';
 import 'package:lettutor/src/providers/auth_provider.dart';
 import 'package:lettutor/src/services/booking_service.dart';
-import 'package:lettutor/src/services/tutor_service.dart';
 import 'package:provider/provider.dart';
 
 class TutorSchedule extends StatefulWidget {
@@ -77,19 +75,20 @@ class _TutorScheduleState extends State<TutorSchedule> {
     return SafeArea(
       child: SizedBox(
         height: MediaQuery.of(context).size.height * 0.75,
-        child: _isLoading
-            ? const Center(
+        child: _isLoading ? const Center(
           child: CircularProgressIndicator(),
-        )
-            : Column(
-          children: [
+        ) : Column(
+          children:
+          [
+
             Padding(
               padding: const EdgeInsets.only(top: 16, bottom: 0),
               child: Text(
                 'Choose Learning Date',
-                style: Theme.of(context).textTheme.headline3,
+                style: Theme.of(context).textTheme.displaySmall,
               ),
             ),
+
             Expanded(
               child: GridView.count(
                 padding: const EdgeInsets.all(24),
@@ -101,7 +100,7 @@ class _TutorScheduleState extends State<TutorSchedule> {
                   scheduleStartTimestamps.length,
                       (index) => ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[300],
+                      backgroundColor: Colors.pink[300],
                     ),
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(

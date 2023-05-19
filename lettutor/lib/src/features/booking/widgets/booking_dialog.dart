@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:lettutor/src/models/schedule/schedule.dart';
 import 'package:lettutor/src/providers/auth_provider.dart';
 import 'package:lettutor/src/services/booking_service.dart';
 import 'package:provider/provider.dart';
 
 class BookingConfirmDialog extends StatefulWidget {
-  const BookingConfirmDialog({Key? key, required this.schedule}) : super(key: key);
-  final Schedule schedule;
+  const BookingConfirmDialog({Key? key, required this.start, required this.end, required this.date, required this.scheduleDetailIds}) : super(key: key);
+  final String start;
+  final String end;
+  final String date;
+  final List<String> scheduleDetailIds;
 
   @override
   State<BookingConfirmDialog> createState() => _BookingConfirmDialogState();
@@ -15,23 +16,23 @@ class BookingConfirmDialog extends StatefulWidget {
 
 class _BookingConfirmDialogState extends State<BookingConfirmDialog> {
   final _controller = TextEditingController();
-  late final String start;
-  late final String end;
-  late final String date;
 
   @override
   void initState() {
     super.initState();
-    start = widget.schedule.startTime ?? '??:??';
-    end = widget.schedule.endTime ?? '??:??';
-    date = DateFormat.yMMMMEEEEd().format(DateTime.fromMillisecondsSinceEpoch(widget.schedule.startTimestamp!));
+    // start = widget.schedule.startTime ?? '??:??';
+    // end = widget.schedule.endTime ?? '??:??';
+    // date = DateFormat.yMMMMEEEEd().format(DateTime.fromMillisecondsSinceEpoch(widget.schedule.startTimestamp!));
   }
 
   @override
   Widget build(BuildContext context) {
     final authProvider = context.watch<AuthProvider>();
     final accessToken = authProvider.token?.access?.token ?? '';
-
+    final bookStart = widget.start;
+    final bookEnd = widget.end;
+    final bookDate = widget.date;
+    final bookIds = widget.scheduleDetailIds;
     return AlertDialog(
       title: const Text('Book This Tutor'),
       content: Column(
@@ -48,12 +49,12 @@ class _BookingConfirmDialogState extends State<BookingConfirmDialog> {
           const SizedBox(height: 4),
 
           Text(
-            '  $start - $end',
+            '  $bookStart- $bookEnd',
             style: const TextStyle(fontSize: 16),
           ),
 
           Text(
-            '  $date',
+            '  $bookDate',
             style: const TextStyle(fontSize: 16),
           ),
 
@@ -99,7 +100,7 @@ class _BookingConfirmDialogState extends State<BookingConfirmDialog> {
         TextButton(
             onPressed: () async {
               await BookingService.bookClass(
-                scheduleDetailIds: [widget.schedule.scheduleDetails?.first.id ?? ''],
+                scheduleDetailIds: bookIds,
                 note: _controller.text,
                 token: accessToken,
               );

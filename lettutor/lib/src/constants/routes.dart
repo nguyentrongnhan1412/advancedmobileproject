@@ -14,4 +14,6 @@ class Routes {
   static const writeReview = '/review/write_review/';
   static const videoCall = '/video_call/';
   static const tutorSearchResult = '/tutor_search_result';
+
+  static const chatGPT = '/chat_gpt';
 }

@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lettutor/src/constants/routes.dart';
 import 'package:lettutor/src/features/booking/widgets/booking_dialog.dart';
 import 'package:lettutor/src/models/schedule/schedule.dart';
 
-class BookingHourView extends StatelessWidget {
-  const BookingHourView({Key? key, required this.schedules, required this.timestamp,}) : super(key: key);
+class BookingHourView extends StatefulWidget {
+  const BookingHourView({Key? key, required this.schedules, required this.timestamp}) : super(key: key);
   final List<Schedule> schedules;
   final int timestamp;
 
   @override
+  State<BookingHourView> createState() => _BookingHourViewState();
+}
+
+class _BookingHourViewState extends State<BookingHourView> {
+
+  @override
+  void initState() {
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    print(schedules.length);
-    final pickedDate = DateTime.fromMillisecondsSinceEpoch(timestamp);
-    final validSchedules = schedules.where((schedule) {
+    final pickedDate = DateTime.fromMillisecondsSinceEpoch(widget.timestamp);
+    final validSchedules = widget.schedules.where((schedule)
+    {
       if (schedule.startTimestamp == null) return false;
       final date = DateTime.fromMillisecondsSinceEpoch(schedule.startTimestamp!);
       if (date.day == pickedDate.day &&
@@ -37,11 +46,14 @@ class BookingHourView extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [
+        children:
+        [
+
           Text(
             'On ${DateFormat.yMMMMEEEEd().format(pickedDate)}',
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
+
           Expanded(
             child: GridView.count(
               padding: const EdgeInsets.all(24),
@@ -56,18 +68,22 @@ class BookingHourView extends StatelessWidget {
                       validSchedules[index].startTimestamp ?? 0));
                   final end = DateFormat.Hm().format(DateTime.fromMillisecondsSinceEpoch(
                       validSchedules[index].endTimestamp ?? 0));
+                  final date = DateFormat.yMMMMEEEEd().format(DateTime.fromMillisecondsSinceEpoch(
+                      validSchedules[index].startTimestamp ?? 0));
+                  final scheduleDetailIds = [validSchedules[index].scheduleDetails?.first.id ?? ''];
 
                   return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue[300],
+                      backgroundColor: Colors.pink[300],
                     ),
-                    onPressed: validSchedules[index].isBooked as bool
-                        ? null
-                        : () async {
-                      await showDialog(
+                    onPressed: validSchedules[index].isBooked as bool ? null : () async {
+                       await showDialog(
                         context: context,
                         builder: (context) => BookingConfirmDialog(
-                          schedule: validSchedules[index],
+                          start: start,
+                          end: end,
+                          date: date,
+                          scheduleDetailIds: scheduleDetailIds,
                         ),
                       );
                     },
@@ -89,8 +105,7 @@ class BookingHourView extends StatelessWidget {
 Future<bool> _showBookingConfirmDialog(BuildContext context, Schedule schedule) {
   final start = schedule.startTime;
   final end = schedule.endTime;
-  final date =
-  DateFormat.yMMMMEEEEd().format(DateTime.fromMillisecondsSinceEpoch(schedule.startTimestamp!));
+  final date = DateFormat.yMMMMEEEEd().format(DateTime.fromMillisecondsSinceEpoch(schedule.startTimestamp!));
 
   return showDialog<bool>(
     context: context,

@@ -156,8 +156,7 @@ class UserService {
   }
 
   static Future<User?> getUserInfo(String token) async {
-    final response = await get(
-      Uri.parse('$baseUrl/user/info'),
+    final response = await get(Uri.parse('$baseUrl/user/info'),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',
@@ -204,5 +203,21 @@ class UserService {
       return null;
     }
     return User.fromJson(jsonDecode['user']);
+  }
+
+  static Future<bool> uploadAvatar(String path, String token) async {
+    final request = MultipartRequest("POST", Uri.parse(baseUrl + '/user/uploadAvatar'));
+
+    final img = await MultipartFile.fromPath("avatar", path);
+
+    request.files.add(img);
+    request.headers.addAll({"Authorization": 'Bearer $token'});
+
+    StreamedResponse response = await request.send();
+    if (response.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

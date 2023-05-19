@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lettutor/src/features/courses/courses/views/courses_view.dart';
+import 'package:lettutor/src/features/courses/books/views/books_view.dart';
+
 class CoursesPage extends StatefulWidget {
   const CoursesPage({Key? key}) : super(key: key);
 
@@ -28,7 +30,7 @@ class _CoursesPageState extends State<CoursesPage> {
                     SizedBox(width: 8),
 
                     Text(
-                      'All Courses',
+                      'Courses',
                       style: TextStyle(color: Colors.pink),
                     )
                   ],
@@ -60,32 +62,15 @@ class _CoursesPageState extends State<CoursesPage> {
 
             Expanded(
 
-              child: TabBarView(children: [
-
+              child: TabBarView(children:
+              [
                 CoursesView(),
-
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-
-                      TextField(
-                        decoration: InputDecoration(
-                          contentPadding: const EdgeInsets.only(right: 24),
-                          hintStyle: TextStyle(color: Colors.grey[400]),
-                          hintText: 'Search books',
-                          prefixIcon: const Icon(Icons.search),
-                          border: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.grey, width: 2),
-                              borderRadius: BorderRadius.all(Radius.circular(10))),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                BookView(),
               ]
               ),
-            )
+            ),
+
+
           ],
         )
     );

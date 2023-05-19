@@ -173,7 +173,7 @@ class _RegisterViewState extends State<RegisterView> {
             const SizedBox(height: 16),
 
             Text(
-              lang.password,
+              lang.email,
               style: const TextStyle(fontSize: 16, color: Colors.grey),
             ),
 
